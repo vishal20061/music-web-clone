@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: roboto;
+    }
+
+    html,
+    body {
+      height: 100vh;
+      width: 100%;
+    }
+    html::-webkit-scrollbar{
+      display: none;
+    }
+
+    nav {
+      line-height: 7vh;
+      background-color: #270082;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20vh;
+      color: white;
+      /* position:; */
+    }
+
+    nav .right {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 40%;
+    }
+
+    nav .right h3 {
+      font-size: 2.7vh;
+      font-weight: 450;
+    }
+    
+    nav .right h3:hover{
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    nav .right h3:active{
+      transform: scale(0.90);
+      color: #f4fb28;
+    }
+
+    nav .left h1 {
+      font-size: 4.5vh;
+      font-weight: 750;
+    }
+
+    .top {
+      height: 130vh;
+      width: 100%;
+      /* background-color: blue; */
+      background: url("music-top.jpg");
+      background-size: cover;
+      background-position: 0 -50px;
+      background-repeat: no-repeat;
+      position: absolute;
+    }
+
+    .text {
+      /* background-color: red; */
+      color: white;
+      height: 40vh;
+      width: 60%;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .text h1 {
+      font-size: 10vh;
+      font-weight: 750;
+    }
+
+    .text h3 {
+      font-size: 4vh;
+      font-weight: 350;
+    }
+
+    .text p {
+      font-size: 2.8vh;
+      font-weight: 350;
+    }
+
+    .second {
+      height: 150vh;
+      width: 100%;
+      background-color: #281154;
+      margin-top: 90vh;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 40px;
+      flex-direction: column;
+      color: white;
+      position: absolute;
+    }
+
+    .second .music-logo {
+      margin-top: 5vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 3vh;
+      /* text-align: center; */
+    }
+
+    .second h2 {
+      font-size: 4vh;
+      font-weight: 450;
+    }
+
+    .second h3 {
+      width: 70%;
+      text-align: center;
+      font-size: 2.9vh;
+      font-weight: 550;
+      line-height: 5vh;
+    }
+
+    .second button {
+      height: 20%;
+      width: 15%;
+      font-size: 3vh;
+      font-weight: 300;
+      text-transform: capitalize;
+      background-color: #DC0000;
+      border: none;
+      color: white;
+      padding: 15px 15px;
+    }
+
+    .second p {
+      font-size: 2.5vh;
+      font-weight: 300;
+    }
+
+    .middle-img img {
+      position: relative;
+      top: 18%;/
+    }
+
+    .third {
+      /* background-color: red; */
+      height: 140vh;
+      width: 100%;
+      z-index: 1;
+      color: black;
+      position: absolute;
+      top: 360vh;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-direction: column;
+      /* padding-bottom: 30%; */
+    }
+
+    .third h1 {
+      font-size: 4.3vh;
+      font-weight: 450;
+    }
+
+    .third p {
+      width: 75%;
+      font-size: 2.5vh;
+      font-weight: 300;
+      line-height: 5vh;
+    }
+
+    .third button {
+      /* height: 6%;
+        width: 12%; */
+      background-color: #37008E;
+      color: white;
+      font-size: 3.2vh;
+      border: none;
+      font-weight: 300;
+      padding: 15px 25px;
+    }
+
+    .fourth {
+      display: flex;
+      background-color: white;
+      height: 80vh;
+      width: 100%;
+      top: 460vh;
+      position: relative;
+    }
+
+    .fourth .left {
+      /* background-color: blue; */
+      height: 60vh;
+      width: 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fourth .left img {
+      height: 80%;
+    }
+
+    .fourth .right {
+      /* background-color: red; */
+      height: 60vh;
+      width: 45%;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 30px;
+      align-items: start;
+      flex-direction: column;
+      padding: 10vh 0;
+    }
+    .fourth .right h2{
+      font-size: 6vh;
+      font-weight: 400;
+    }
+
+    .fourth .right h4 {
+      font-size: 2.5vh;
+      font-weight: 350;
+      line-height: 3.5vh;
+    }
+
+    .fourth .right button {
+      height: 60px;
+      width: 130px;
+      font-size: 3vh;
+      font-weight: 320;
+      background-color: #37008E;
+      color: white;
+      border: none;
+      padding: 10px 0;
+    }
+
+    .bottom {
+      height: 35vh;
+      width: 100%;
+      top: 570vh;
+      position: absolute;
+      background-color: #1B0058;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      color: white;
+    }
+
+    .bottom .box1 {
+      padding: 25px 0;
+      /* background-color: red; */
+      height: 35vh;
+      width: 18%;
+    }
+
+    .bottom .box1 h3,
+    .bottom .box2 h3,
+    .bottom .box3 h3,
+    .bottom .box4 h3 {
+      font-size: 3vh;
+      font-weight: 400;
+      border-bottom: 1.5px solid white;
+      margin-bottom: 25px;
+      padding-bottom: 5px;
+    }
+
+    .bottom .box1 h4,
+    .bottom .box2 h4,
+    .bottom .box3 h4,
+    .bottom .box4 h4 {
+      font-size: 2.2vh;
+      font-weight: 350;
+      line-height: 3.2vh;
+    }
+    .bottom .box2 {
+      padding: 25px 0;
+      /* background-color: rgb(13, 255, 0); */
+      height: 35vh;
+      width: 18%;
+    }
+
+    .bottom .box3 {
+      padding: 25px 0;
+      /* background-color: rgb(17, 0, 255); */
+      height: 35vh;
+      width: 18%;
+    }
+
+    .bottom .box4 {
+      padding: 25px 0;
+      /* background-color: rgb(255, 0, 208); */
+      height: 35vh;
+      width: 18%;
+    }
+
+    .bottom-text {
+      /* line-height: 20px; */
+      height: 50px;
+      width: 100%;
+      position: relative;
+      top: 475vh;
+      background-color: #270082;
+    }
+    .bottom-text h1{
+      font-size: 2.5vh;
+      text-align: center;
+      line-height: 50px;
+      font-weight: 400;
+      color: white;
+    }
+    * button:hover{
+      transform: scale(1.1);
+      border-radius: 5px;
+    }
+    * button:active{
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="left">
+      <h1>mytunes</h1>
+    </div>
+    <div class="right">
+      <h3>Overview</h3>
+      <h3>Music</h3>
+      <h3>Video</h3>
+      <h3>Gift-cards</h3>
+    </div>
+  </nav>
+  <div class="top"></div>
+  <div class="text">
+    <h1>myTunes</h1>
+    <h3>Your music, movies, and TV shows take center stage.</h3>
+    <p>
+      myTunes is the best way to organize and enjoy the music, movies, and TV
+      shows you already have — and shop for the ones you want. Enjoy all the
+      entertainment myTunes has to offer on your Mac and PC.
+    </p>
+  </div>
+  <div class="second">
+    <div class="music-logo">
+      <img src="foundation_music.png" alt="" />
+      <h1>Music</h1>
+    </div>
+    <h2>45 million songs. Zero ads.</h2>
+    <h3>
+      Stream over 45 million songs, ad-free. Or download albums and tracks to
+      listen to offline. All the music in your h3ersonal myTunes library — no
+      matter where it came from — lives right alongside the Orange Music
+      catalog. Start your free three-month trial with no commitment, and
+      cancel anytime.
+    </h3>
+    <button>Start your trail now</button>
+    <p>
+      Orange Music is available in myTunes, and for iOS and Android devices.
+    </p>
+    <div class="middle-img">
+      <img src="Group 2.png" alt="" />
+    </div>
+  </div>
+  <div class="third">
+    <h1>The movie and TV collection you always wished for. Granted.</h1>
+    <p>
+      With over 100,000 movies and TV shows to choose from, there’s always
+      something great to watch on myTunes and if you watch on Orange TV 4K,
+      you’ll be able to enjoy a tremendous selection of your favorite content
+      in 4K HDR. So get ready to enjoy episodes of your favorite TV shows or
+      hit movies you’ve been waiting to see — anytime, anywhere. Just tap to
+      play, or even download if you’re going somewhere you won’t have Wi-Fi.
+    </p>
+    <button>Read More</button>
+    <img src="MacBook Pro.png" alt="" />
+  </div>
+  <div class="fourth">
+    <div class="left">
+      <img src="Gift-card.png" alt="">
+    </div>
+    <div class="right">
+      <h2>Gift Cards</h2>
+      <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque expedita tempore quasi omnis a aut et totam
+        illo fuga accusamus dolorum vero, ut harum consectetur. Minima molestias officiis culpa non sed dicta itaque. Et
+        aliquam illo obcaecati molestias veritatis porro.</h4>
+      <h4>
+        Already have an Orange MyTunes Music Gift Card?
+      </h4>
+      <button>Redeem</button>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="box1">
+      <h3>Shop & Learn</h3>
+      <h4>Musics</h4>
+      <h4>Movies</h4>
+      <h4>Shows</h4>
+      <h4>Apps</h4>
+      <h4>Gift-cards</h4>
+    </div>
+    <div class="box2">
+      <h3>Orange Store</h3>
+      <h4>Find a Store</h4>
+      <h4>Today at Orange</h4>
+      <h4>Orange Camp</h4>
+      <h4>Financing</h4>
+      <h4>Orer Status</h4>
+    </div>
+    <div class="box3">
+      <h3>Education & Business</h3>
+      <h4>Orange & Education</h4>
+      <h4>Shop for Collage</h4>
+      <h4>Orange & Business</h4>
+      <h4>Shop for Business</h4>
+      <h4>Job</h4>
+    </div>
+    <div class="box4">
+      <h3>About Orange</h3>
+      <h4>newroom</h4>
+      <h4>Orange Landership</h4>
+      <h4>Investor</h4>
+      <h4>Events</h4>
+      <h4>Contect orange</h4>
+    </div>
+  </div>
+  <div class="bottom-text">
+    <h1>Copyright © 2022 Do Some Coding</h1>
+  </div>
+</body>
+
+</html
